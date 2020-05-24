@@ -21,11 +21,15 @@ const Side = () => {
   }, [state.timer.minutes]);
 
   useEffect(() => {
-    handleTimer();
+    if (state.timer.start) {
+      handleTimer();
+    }
   }, [countdownKey]);
 
   return (
-    <div className="side">
+    <div
+      className={`side is-${state.timer.style}`}
+    >
       <div className="side-header">
         <h1>StayFocused</h1>
         <Selection />

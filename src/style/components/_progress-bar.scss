@@ -33,7 +33,7 @@
       
       & > div {
         font-size: 3em;
-        color: #39a9db;
+        color: var(--button-bg);
         font-weight: 600;
 
         &:first-child {
@@ -48,7 +48,7 @@
           font-weight: 600;
           font-size: 4em;
           margin-top: .38em;
-          border-bottom: 10px solid #39a9db;
+          border-bottom: 10px solid var(--button-bg);
         }
       }
     }

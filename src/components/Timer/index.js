@@ -51,7 +51,7 @@ const Timer = ({
 Timer.propTypes = {
   autoStart: bool,
   start: bool,
-  time: func,
+  time: number,
   onTick: func,
   countdownKey: number,
 };
@@ -59,7 +59,7 @@ Timer.propTypes = {
 Timer.defaultProps = {
   autoStart: false,
   start: false,
-  time: (f) => f,
+  time: new Date(),
   onTick: (f) => f,
   countdownKey: 0,
 };
