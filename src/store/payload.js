@@ -4,7 +4,7 @@ const payload = {
   timer: {
     start: false,
     style: 'pomodoro',
-    minutes: 0.1,
+    minutes: 25,
     sessions: 0,
   },
   tasks: {
