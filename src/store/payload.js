@@ -6,6 +6,9 @@ const payload = {
     style: 'pomodoro',
     minutes: 25,
   },
+  tasks: {
+    list: [],
+  },
 };
 
 export default payload;

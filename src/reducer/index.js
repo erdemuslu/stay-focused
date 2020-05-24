@@ -1,10 +1,32 @@
+/* eslint-disable no-case-declarations */
 import {
+  ADD_TASK,
   SET_TIMER_STYLE,
   SET_START,
 } from '../actions/types';
 
 function mainReducer(state, action) {
   switch (action.type) {
+    case ADD_TASK:
+      const { title, isDone } = action.params;
+
+      const newItem = [
+        {
+          title,
+          isDone,
+        },
+      ];
+
+      return {
+        ...state,
+        tasks: {
+          ...state.tasks,
+          list: [
+            ...state.tasks.list,
+            ...newItem,
+          ],
+        },
+      };
     case SET_TIMER_STYLE:
       return {
         ...state,

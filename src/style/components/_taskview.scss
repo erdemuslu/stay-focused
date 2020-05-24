@@ -1,0 +1,48 @@
+.taskview {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  width: 60%;
+  height: 100%;
+  padding: 6em 0;
+
+  &-wrapper {
+    width: 80%;
+  }
+
+  form {
+    width: 100%;
+    margin-bottom: 2em;
+
+    & > div {
+      width: 100%;
+      position: relative;
+
+      input {
+        width: 100%;
+        border: 0;
+        border-bottom: 1px solid rgba(0, 0, 0, .32);
+        background-color: transparent;
+        padding: .25em 0em;
+        font-size: 1.25em;
+      }
+
+      button {
+        position: absolute;
+        bottom: .2em;
+        right: 0;
+        width: auto;
+        padding-left: 1em;
+        padding-right: 1em;
+        font-size: 1em;
+        height: 2em;
+        border-radius: 4px;
+        background-color: #333;
+        border: 0;
+        cursor: pointer;
+        color: #fff;
+      }
+    }
+  }
+}
