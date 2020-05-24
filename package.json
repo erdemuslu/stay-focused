@@ -1,0 +1,20 @@
+{
+  "name": "stay-focused",
+  "version": "1.0.0",
+  "description": "Do not lose your focus. Be productive!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erdemuslu/stay-focused.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erdemuslu/stay-focused/issues"
+  },
+  "homepage": "https://github.com/erdemuslu/stay-focused#readme"
+}
