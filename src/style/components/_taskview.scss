@@ -35,16 +35,27 @@
           padding: .5em 1em;
         }
   
-        &:first-child {
+        &:first-of-type {
           span {
             background-color: #39a9db;
           }
         }
   
-        &:last-child {
+        &:last-of-type {
           span {
             background-color: #6baa75;
           }
+        }
+      }
+
+
+      a {
+        margin-left: 2em;
+
+        img {
+          display: block;
+          width: 2em;
+          height: auto;
         }
       }
     }

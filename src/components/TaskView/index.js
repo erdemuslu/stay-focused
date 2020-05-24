@@ -2,6 +2,7 @@ import React, { createRef, useContext, useState } from 'react';
 
 import { MainContext } from '../../store';
 import { addTask, updateTaskStatus, resetTimerStatistics } from '../../actions';
+import GithubLogo from '../../assets/images/github-logo.svg';
 
 const TaskView = () => {
   const { state, dispatch } = useContext(MainContext);
@@ -44,6 +45,9 @@ const TaskView = () => {
               { state.tasks.list.filter((item) => item.isDone).length }
               <span>Completed</span>
             </div>
+            <a href="https://github.com/erdemuslu/stay-focused">
+              <img alt="github-logo" src={GithubLogo} />
+            </a>
           </div>
         </div>
         <form

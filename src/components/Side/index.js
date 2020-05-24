@@ -8,6 +8,8 @@ import { setStart, updateSessions } from '../../actions';
 import Selection from '../Selection';
 import Timer from '../Timer';
 
+import GithubLogo from '../../assets/images/github-logo.svg';
+
 const Side = () => {
   const { state, dispatch } = useContext(MainContext);
   const [countdownKey, setCountdownKey] = useState(0);
@@ -44,6 +46,9 @@ const Side = () => {
           <img alt="logo" src={Logo} />
         </h1>
         <Selection />
+        <a href="https://github.com/erdemuslu/stay-focused">
+          <img alt="github-logo" src={GithubLogo} />
+        </a>
       </div>
       <div className="side-content">
         <div className="side-progress">
