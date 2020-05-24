@@ -4,7 +4,9 @@
   "description": "Do not lose your focus. Be productive!",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel index.html",
+    "clean": "rm -rf dist .cache",
+    "build": "yarn clean && parcel build index.html"
   },
   "repository": {
     "type": "git",
@@ -18,14 +20,20 @@
   },
   "homepage": "https://github.com/erdemuslu/stay-focused#readme",
   "devDependencies": {
+    "@babel/core": "^7.9.6",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.20.0",
-    "eslint-plugin-react-hooks": "^2.5.1"
+    "eslint-plugin-react-hooks": "^2.5.1",
+    "sass": "^1.26.5"
   },
   "dependencies": {
-    "@babel/plugin-transform-runtime": "^7.9.6"
+    "@babel/plugin-transform-runtime": "^7.9.6",
+    "parcel-bundler": "^1.12.4",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   }
 }
