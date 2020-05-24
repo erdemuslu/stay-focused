@@ -8,6 +8,7 @@ const ProgressBar = ({ value, maxValue, strokeWidth }) => (
     value={value}
     maxValue={maxValue}
     strokeWidth={strokeWidth}
+    counterClockwise
   />
 );
 
@@ -20,7 +21,7 @@ ProgressBar.propTypes = {
 ProgressBar.defaultProps = {
   value: 100,
   maxValue: 100,
-  strokeWidth: 2,
+  strokeWidth: 3,
 };
 
 export default ProgressBar;

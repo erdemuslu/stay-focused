@@ -1,27 +1,63 @@
-import React from 'react';
-import { number, bool } from 'prop-types';
+import React, { createRef, useEffect } from 'react';
+import { bool, func } from 'prop-types';
 import Countdown from 'react-countdown';
 
 const Timer = ({
   autoStart,
-  minutes,
-}) => (
-  <div className="timer">
-    <Countdown
-      autoStart={autoStart}
-      date={Date.now() + (60 * minutes * 1000)}
-    />
-  </div>
-);
+  time,
+  start,
+  onTick
+}) => {
+  const CountdownRef = createRef();
+
+  const startTimer = () => {
+    CountdownRef.current.api.start();
+  };
+
+  const pauseTimer = () => {
+    CountdownRef.current.api.pause();
+  };
+
+  useEffect(() => {
+    if (start) {
+      startTimer();
+    } else {
+      pauseTimer();
+    }
+  }, [start]);
+
+  return (
+    <div className="timer">
+      <Countdown
+        autoStart={autoStart}
+        date={time}
+        ref={CountdownRef}
+        renderer={
+          ({ minutes: minutesArg, seconds }) => (
+            <div>
+              <div>{minutesArg}</div>
+              <div>{String(seconds).length < 2 ? `0${seconds}` : seconds}</div>
+            </div>
+          )
+        }
+        onTick={onTick}
+      />
+    </div>
+  );
+};
 
 Timer.propTypes = {
   autoStart: bool,
-  minutes: number,
+  start: bool,
+  time: func,
+  onTick: func,
 };
 
 Timer.defaultProps = {
   autoStart: false,
-  minutes: 25,
+  start: false,
+  time: (f) => f,
+  onTick: (f) => f,
 };
 
 export default Timer;

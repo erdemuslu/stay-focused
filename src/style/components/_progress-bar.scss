@@ -3,6 +3,14 @@
   width: 20em;
   height: 20em;
 
+  .CircularProgressbar .CircularProgressbar-path {
+    stroke: #39a9db;
+  }
+
+  .CircularProgressbar .CircularProgressbar-trail {
+    stroke: #e1edf3;
+  }
+
   .timer {
     position: absolute;
     top: 0;
@@ -12,6 +20,26 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5em;
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      
+      & > div {
+        font-size: 3em;
+        color: #39a9db;
+        font-weight: 600;
+
+        &:last-child {
+          // margin-top: .25em;
+          // margin-left: .25em;
+          font-weight: 300;
+          font-size: 1.5em;
+          // border-bottom: 2px solid #39a9db;
+        }
+      }
+    }
   }
 }
