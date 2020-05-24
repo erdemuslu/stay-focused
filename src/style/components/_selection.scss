@@ -1,0 +1,27 @@
+.selection {
+  display: inline-flex;
+  margin-left: auto;
+
+  &-item {
+    display: inline-flex;
+    align-items: center;
+    width: 2em;
+    height: auto;
+    opacity: .32;
+    transition: all .32s linear;
+    cursor: pointer;
+
+    * {
+      pointer-events: none;
+    }
+
+    &:first-child {
+      width: 1.5em;
+      margin-right: 1em;
+    }
+
+    &.is-selected {
+      opacity: 1;
+    }
+  }
+}
