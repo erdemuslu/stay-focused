@@ -1,5 +1,29 @@
 .side {
+  display: flex;
+  flex-direction: column;
   width: 36%;
   height: 100%;
+  padding: 2em;
   background-color: var(--side-bg);
+
+  &-header {
+    h1 {
+      font-size: 1em;
+      text-transform: uppercase;
+      letter-spacing: .25em;
+    }
+  }
+
+  &-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  &__progressbar {
+    width: 20em;
+    height: 20em;
+  }
 }
