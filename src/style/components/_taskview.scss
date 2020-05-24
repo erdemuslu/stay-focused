@@ -91,6 +91,9 @@
   }
 
   &-list {
+    max-height: 30rem;
+    overflow-y: scroll;
+
     &-empty {
       text-align: center;
       margin-top: 6em;
