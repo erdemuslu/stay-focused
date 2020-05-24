@@ -6,7 +6,8 @@
   "scripts": {
     "start": "parcel index.html",
     "clean": "rm -rf dist .cache",
-    "build": "yarn clean && parcel build index.html"
+    "build": "yarn clean && parcel build index.html",
+    "deploy": "yarn build && surge dist stay-focused.surge.sh"
   },
   "repository": {
     "type": "git",
