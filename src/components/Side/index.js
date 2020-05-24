@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 
 import { MainContext } from '../../store';
-import { setStart } from '../../actions';
+import { setStart, updateSessions } from '../../actions';
 
 import Selection from '../Selection';
 import Timer from '../Timer';
@@ -23,6 +23,13 @@ const Side = () => {
   useEffect(() => {
     if (state.timer.start) {
       handleTimer();
+    }
+
+    if (
+      state.timer.minutes === 5
+      && countdownKey > 1
+    ) {
+      dispatch(updateSessions());
     }
   }, [countdownKey]);
 

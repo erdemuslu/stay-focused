@@ -5,6 +5,7 @@ const payload = {
     start: false,
     style: 'pomodoro',
     minutes: 25,
+    sessions: 0,
   },
   tasks: {
     list: [],

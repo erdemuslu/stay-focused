@@ -3,6 +3,9 @@ import {
   ADD_TASK,
   SET_TIMER_STYLE,
   SET_START,
+  UPDATE_TASK_STATUS,
+  UPDATE_SESSIONS,
+  RESET_TIMER_STATISTICS,
 } from '../actions/types';
 
 function mainReducer(state, action) {
@@ -42,6 +45,47 @@ function mainReducer(state, action) {
         timer: {
           ...state.timer,
           start: action.start,
+        },
+      };
+    case UPDATE_TASK_STATUS:
+      const newArr = state.tasks.list.map((item, itemIndex) => {
+        const nItem = item;
+
+        if (action.payload.index === itemIndex) {
+          nItem.isDone = action.payload.checked;
+        }
+
+        return nItem;
+      });
+      return {
+        ...state,
+        tasks: {
+          ...state.tasks,
+          list: newArr,
+        },
+      };
+    case UPDATE_SESSIONS:
+      return {
+        ...state,
+        timer: {
+          ...state.timer,
+          sessions: state.timer.sessions + 1,
+        },
+      };
+    case RESET_TIMER_STATISTICS:
+      return {
+        ...state,
+        timer: {
+          ...state.timer,
+          sessions: 0,
+        },
+        tasks: {
+          ...state.tasks,
+          list: state.tasks.list.map((item) => {
+            const nItem = item;
+            nItem.isDone = false;
+            return nItem;
+          }),
         },
       };
     default:

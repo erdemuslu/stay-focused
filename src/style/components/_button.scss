@@ -9,4 +9,9 @@
   font-weight: 400;
   transition: all .32s linear;
   cursor: pointer;
+
+  &.is-small {
+    font-size: .875em;
+    padding: 8px 20px;
+  }
 }

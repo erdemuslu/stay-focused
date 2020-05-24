@@ -1,4 +1,4 @@
-import React, { createRef, useEffect } from 'react';
+import React, { memo, createRef, useEffect } from 'react';
 import { bool, func, number } from 'prop-types';
 import Countdown from 'react-countdown';
 
@@ -64,4 +64,15 @@ Timer.defaultProps = {
   countdownKey: 0,
 };
 
-export default Timer;
+const areEqual = (prevProps, nextProps) => {
+  if (
+    prevProps.countdownKey === nextProps.countdownKey
+    && prevProps.start === nextProps.start
+  ) {
+    return true;
+  }
+
+  return false;
+};
+
+export default memo(Timer, areEqual);
