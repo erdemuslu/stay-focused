@@ -1,11 +1,12 @@
 .side {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 36%;
   height: 100%;
   padding: 2em;
   background-color: var(--side-bg);
-  // background-image: radial-gradient( circle farthest-corner at 1.3% 2.8%,  rgba(239,249,249,1) 0%, rgba(182,199,226,1) 100.2% );
+  overflow: hidden;
 
   &-header {
     display: flex;
@@ -28,10 +29,24 @@
   }
 
   &-cta {
+    position: absolute;
+    bottom: 0;
+    left: 0;
     display: flex;
     justify-content: center;
     width: 100%;
     margin-top: 2em;
+    
+    button {
+      width: 100%;
+      border-radius: 0;
+      height: 3em;
+      font-weight: 600;
+
+      &:focus {
+        outline: none;
+      }
+    }
   }
 
   &__progressbar {

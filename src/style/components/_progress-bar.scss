@@ -32,12 +32,18 @@
         color: #39a9db;
         font-weight: 600;
 
+        &:first-child {
+          margin-top: -.1em;
+          font-size: 34em;
+          line-height: 1;
+          transform-origin: center;
+          transform: rotate(-2deg);
+          opacity: .48;
+        }
+
         &:last-child {
-          // margin-top: .25em;
-          // margin-left: .25em;
           font-weight: 300;
-          font-size: 1.5em;
-          // border-bottom: 2px solid #39a9db;
+          font-size: 12em;
         }
       }
     }
