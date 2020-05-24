@@ -1,21 +1,28 @@
-import React, { useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
+
+import { MainContext } from '../../store';
+import { setStart } from '../../actions';
 
 import Selection from '../Selection';
-// import ProgressBar from '../ProgressBar';
 import Timer from '../Timer';
 
 const Side = () => {
-  const [start, setStart] = useState(false);
-  // const [progressBarValue, setProgressBarValue] = useState(100);
-  const [time] = useState(Date.now() + (60 * 25 * 1000));
+  const { state, dispatch } = useContext(MainContext);
+  const [countdownKey, setCountdownKey] = useState(0);
+  const [time, setTime] = useState(Date.now() + (60 * 25 * 1000));
 
   const handleTimer = () => {
-    setStart((prevState) => !prevState);
+    dispatch(setStart(!state.timer.start));
   };
 
-  // const handleTick = () => {
-  //   setProgressBarValue((prevState) => prevState - (100 / (60 * 25)));
-  // };
+  useEffect(() => {
+    setTime(Date.now() + (60 * state.timer.minutes * 1000));
+    setCountdownKey((prevState) => prevState + 1);
+  }, [state.timer.minutes]);
+
+  useEffect(() => {
+    handleTimer();
+  }, [countdownKey]);
 
   return (
     <div className="side">
@@ -25,14 +32,11 @@ const Side = () => {
       </div>
       <div className="side-content">
         <div className="side-progress">
-          {/* <ProgressBar
-            value={progressBarValue}
-          /> */}
           <Timer
+            countdownKey={countdownKey}
             autoStart={false}
-            start={start}
+            start={state.timer.start}
             time={time}
-            // onTick={handleTick}
           />
         </div>
       </div>
@@ -42,7 +46,7 @@ const Side = () => {
           className="btn"
           onClick={handleTimer}
         >
-          {start ? 'Pause' : 'Start'}
+          {state.timer.start ? 'Pause' : 'Start'}
         </button>
       </div>
     </div>

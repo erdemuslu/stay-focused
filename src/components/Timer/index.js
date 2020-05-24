@@ -1,12 +1,13 @@
 import React, { createRef, useEffect } from 'react';
-import { bool, func } from 'prop-types';
+import { bool, func, number } from 'prop-types';
 import Countdown from 'react-countdown';
 
 const Timer = ({
   autoStart,
   time,
   start,
-  onTick
+  onTick,
+  countdownKey,
 }) => {
   const CountdownRef = createRef();
 
@@ -29,13 +30,14 @@ const Timer = ({
   return (
     <div className="timer">
       <Countdown
+        key={countdownKey}
         autoStart={autoStart}
         date={time}
         ref={CountdownRef}
         renderer={
           ({ minutes: minutesArg, seconds }) => (
             <div>
-              <div>{minutesArg}</div>
+              <div>{String(minutesArg).length < 2 ? `0${minutesArg}` : minutesArg}</div>
               <div>{String(seconds).length < 2 ? `0${seconds}` : seconds}</div>
             </div>
           )
@@ -51,6 +53,7 @@ Timer.propTypes = {
   start: bool,
   time: func,
   onTick: func,
+  countdownKey: number,
 };
 
 Timer.defaultProps = {
@@ -58,6 +61,7 @@ Timer.defaultProps = {
   start: false,
   time: (f) => f,
   onTick: (f) => f,
+  countdownKey: 0,
 };
 
 export default Timer;

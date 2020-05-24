@@ -3,6 +3,9 @@
   margin-left: auto;
 
   &-item {
+    outline: none;
+    border: none;
+    background-color: transparent;
     display: inline-flex;
     align-items: center;
     width: 2em;
