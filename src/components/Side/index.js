@@ -1,5 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 
+import Logo from '../../assets/images/logo.png';
+
 import { MainContext } from '../../store';
 import { setStart, updateSessions } from '../../actions';
 
@@ -38,7 +40,9 @@ const Side = () => {
       className={`side is-${state.timer.style}`}
     >
       <div className="side-header">
-        <h1>StayFocused</h1>
+        <h1>
+          <img alt="logo" src={Logo} />
+        </h1>
         <Selection />
       </div>
       <div className="side-content">

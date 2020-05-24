@@ -11,6 +11,10 @@
   transition: background-color .32s linear;
   overflow: hidden;
 
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+
   &.is-break {
     // --side-bg: #6baa75;
     --side-bg: #cde2d0;
@@ -25,6 +29,12 @@
       font-size: 1em;
       text-transform: uppercase;
       color: #333;
+
+      img {
+        display: block;
+        width: 10em;
+        height: auto;
+      }
     }
   }
 

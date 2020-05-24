@@ -8,6 +8,11 @@
   padding-top: 2.5em;
   padding-bottom: 6em;
 
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+
   &-header {
     display: flex;
     justify-content: space-between;
