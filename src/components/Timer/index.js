@@ -8,6 +8,7 @@ const Timer = ({
   start,
   onTick,
   countdownKey,
+  onComplete,
 }) => {
   const CountdownRef = createRef();
 
@@ -42,6 +43,7 @@ const Timer = ({
             </div>
           )
         }
+        onComplete={onComplete}
         onTick={onTick}
       />
     </div>
@@ -53,6 +55,7 @@ Timer.propTypes = {
   start: bool,
   time: number,
   onTick: func,
+  onComplete: func,
   countdownKey: number,
 };
 
@@ -61,6 +64,7 @@ Timer.defaultProps = {
   start: false,
   time: new Date(),
   onTick: (f) => f,
+  onComplete: (f) => f,
   countdownKey: 0,
 };
 

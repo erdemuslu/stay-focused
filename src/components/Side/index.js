@@ -3,7 +3,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import Logo from '../../assets/images/logo.png';
 
 import { MainContext } from '../../store';
-import { setStart, updateSessions } from '../../actions';
+import { setStart, updateSessions, setTimerStyle } from '../../actions';
 
 import Selection from '../Selection';
 import Timer from '../Timer';
@@ -17,6 +17,10 @@ const Side = () => {
 
   const handleTimer = () => {
     dispatch(setStart(!state.timer.start));
+  };
+
+  const onComplete = () => {
+    dispatch(setTimerStyle(state.timer.style === 'pomodoro' ? 'break' : 'pomodoro'));
   };
 
   useEffect(() => {
@@ -57,6 +61,7 @@ const Side = () => {
             autoStart={false}
             start={state.timer.start}
             time={time}
+            onComplete={onComplete}
           />
         </div>
       </div>
