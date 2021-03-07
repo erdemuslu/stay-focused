@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { arrayOf, number, shape } from 'prop-types';
 
-const ProjectDetails = ({ projects, selected }) => {
-  if (!projects || !projects[selected]) return null;
+const ProjectDetails = ({ projects, selectedIndex }) => {
+  if (!projects || !projects[selectedIndex]) return null;
 
   return (
     <div className="project-details">
@@ -14,17 +14,17 @@ const ProjectDetails = ({ projects, selected }) => {
 
 ProjectDetails.defaultProps = {
   projects: [],
-  selected: 0,
+  selectedIndex: 0,
 };
 
 ProjectDetails.propTypes = {
   projects: arrayOf(shape({})),
-  selected: number,
+  selectedIndex: number,
 };
 
-const mapStateToProps = ({ projects, selected }) => ({
+const mapStateToProps = ({ projects, selectedIndex }) => ({
   projects,
-  selected,
+  selectedIndex,
 });
 
 export default connect(mapStateToProps)(ProjectDetails);
