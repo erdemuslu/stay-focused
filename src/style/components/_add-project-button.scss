@@ -1,0 +1,22 @@
+.add-project-button {
+  svg {
+    fill: #9C9C9C;
+  }
+
+  span {
+    position: absolute;
+    bottom: .5rem;
+    font-size: .75em;
+    color: #9C9C9C;
+    opacity: 0;
+    transform: translateY(2em);
+    transition: all .16s linear;
+  }
+
+  &:hover {
+    span {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

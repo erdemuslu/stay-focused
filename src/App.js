@@ -1,17 +1,12 @@
 import React from 'react';
-
-import Store from './store';
-
-import Side from './components/Side';
-import TaskView from './components/TaskView';
+import Projects from './components/Projects';
+import ProjectDetails from './components/ProjectDetails';
 
 const App = () => (
-  <Store>
-    <div className="app is-default" role="main">
-      <Side />
-      <TaskView />
-    </div>
-  </Store>
+  <div className="app">
+    <ProjectDetails />
+    <Projects />
+  </div>
 );
 
 export default App;

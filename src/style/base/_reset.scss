@@ -16,3 +16,11 @@ input {
     outline: none;
   }
 }
+
+button {
+  display: inline-flex;
+  background-color: transparent;
+  padding: 1em 1.5em;
+  border: 0;
+  cursor: pointer;
+}

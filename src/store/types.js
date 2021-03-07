@@ -1,0 +1,2 @@
+export const ADD_PROJECT = 'ADD_PROJECT';
+export const SET_ACTIVE_PROJECT = 'SET_ACTIVE_PROJECT';
